@@ -1,7 +1,7 @@
 // import Like from './Common/like';
 import React, { Component } from 'react'
 import TableHeader from './Common/tableHeader';
-// import TableBody from './Common/tableBody';
+import TableBody from './Common/tableBody';
 import Like from './Common/like';
 export class MoviesTable extends Component {
     columns = [
@@ -22,7 +22,7 @@ export class MoviesTable extends Component {
             {movies.map(movie =>( 
             <tr key={movie._id}>
                 <td>{movie.title}</td>
-                <td>{movie.genre.name}</td>
+                <td>{movie.genre.name}</td>  
                 <td>{movie.numberInStock}</td>
                 <td>{movie.dailyRentalRate}</td>
                 <td><Like onClick={()=>onLike(movie)} liked={movie.liked}/></td>
