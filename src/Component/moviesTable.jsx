@@ -4,9 +4,13 @@ import TableHeader from "./Common/tableHeader";
 // import TableBody from './Common/tableBody';
 // import Table from "./Common/table";
 import Like from "./Common/like";
+import {Link} from "react-router-dom";
 export class MoviesTable extends Component {
   columns = [
-    {path: "title", label: "Title"},
+    {
+      path: "title",
+      label: "Title",
+    },
     {path: "genre.name", label: "Genre"},
     {path: "numberInStock", label: "Stock"},
     {path: "dailyRentalRate", label: "Rate"},
@@ -34,7 +38,7 @@ export class MoviesTable extends Component {
         <tbody>
           {movies.map((movie) => (
             <tr key={movie._id}>
-              <td>{movie.title}</td>
+              <td><Link to={`/movies/${movie._id}`}>{movie.title}</Link></td>
               <td>{movie.genre.name}</td>
               <td>{movie.numberInStock}</td>
               <td>{movie.dailyRentalRate}</td>

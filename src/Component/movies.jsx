@@ -6,6 +6,7 @@ import {getMovies} from "../services/fakeMovieService";
 import {getGenres} from "../services/fakeGenreService";
 import MoviesTable from "./moviesTable";
 import _ from "lodash";
+import NavBar from "./NavBar";
 export class Movies extends Component {
   state = {
     movies: [],
@@ -76,13 +77,15 @@ export class Movies extends Component {
     const movies = paginate(sorted, currentPage, pageSize);
 
     return (
+      <React.Fragment>
+      
       <div className="row">
         <div className="col-3">
           <ListGroup
             items={this.state.genres}
             selectedItem={this.state.selectedGenre}
             onItemSelect={this.handleGenreSelect}
-          />
+            />
         </div>
         <div className="col">
           <p className="my-4 font-weight-bold font-italic">
@@ -103,6 +106,8 @@ export class Movies extends Component {
           />
         </div>
       </div>
+      </React.Fragment>
+
     );
   }
 }
